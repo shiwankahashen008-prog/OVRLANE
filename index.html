@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OVRLANE | Streetwear</title>
+  <meta name="description" content="Discover premium graphic and oversized streetwear T-shirts at OVRLANE.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="announcement">OVRLANE STREETWEAR — EXPRESS YOUR STYLE</div>
+
+  <header class="navbar">
+    <a class="logo" href="#">OVR<span>LANE</span><small>STREET CULTURE</small></a>
+    <nav>
+      <a href="#home">HOME</a>
+      <a href="#shop">SHOP</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+    <button class="cart-button" onclick="toggleCart()">
+      BAG <span id="cart-count">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">NEW DROP / 2026</p>
+        <h1>WEAR YOUR<br><span>ATTITUDE.</span></h1>
+        <p class="hero-description">Not made to fit in. Premium graphic tees for those who create their own lane.</p>
+        <a class="main-button" href="#shop">SHOP THE DROP ↗</a>
+      </div>
+      <div class="hero-stamp">OVR<br>LANE<br><span>®</span></div>
+      <div class="hero-bottom">DESIGNED TO STAND OUT <span>01 — 06</span></div>
+    </section>
+
+    <section class="ticker">
+      <div>OVRLANE® &nbsp; STREETWEAR &nbsp; NO RULES &nbsp; JUST STYLE &nbsp; OVRLANE® &nbsp; STREETWEAR &nbsp; NO RULES &nbsp; JUST STYLE</div>
+    </section>
+
+    <section class="shop-section" id="shop">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE COLLECTION</p>
+          <h2>FRESH <span>DROPS.</span></h2>
+        </div>
+        <p>Find your fit. Own your lane.</p>
+      </div>
+
+      <div class="shop-tools">
+        <input id="search" type="search" placeholder="Search T-shirts..." oninput="renderProducts()">
+        <div class="filters">
+          <button class="filter active" onclick="setCategory('all', this)">ALL</button>
+          <button class="filter" onclick="setCategory('oversized', this)">OVERSIZED</button>
+          <button class="filter" onclick="setCategory('printed', this)">PRINTED</button>
+          <button class="filter" onclick="setCategory('basic', this)">BASIC</button>
+        </div>
+      </div>
+
+      <div class="product-grid" id="products"></div>
+    </section>
+
+    <section class="statement" id="about">
+      <p class="eyebrow">MORE THAN A T-SHIRT</p>
+      <h2>CREATE YOUR<br><span>OWN LANE.</span></h2>
+      <p>OVRLANE is for the ones who don't follow the crowd. Stand out. Stay original.</p>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <p class="eyebrow">STAY CONNECTED</p>
+      <h2>GOT A <span>QUESTION?</span></h2>
+      <p>Talk to us about your order, sizes or new drops.</p>
+      <a class="main-button" href="#" onclick="contactWhatsApp(); return false;">CONTACT ON WHATSAPP ↗</a>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="#">OVR<span>LANE</span><small>STREET CULTURE</small></a>
+    <p>© 2026 OVRLANE. ALL RIGHTS RESERVED.</p>
+    <a href="#home">BACK TO TOP ↑</a>
+  </footer>
+
+  <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+  <aside class="cart-panel" id="cart-panel">
+    <div class="cart-header">
+      <h2>YOUR BAG</h2>
+      <button onclick="toggleCart()" class="close-cart">✕</button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="total-row"><span>SUBTOTAL</span><strong id="cart-total">Rs. 0</strong></div>
+      <p>Delivery charges may apply.</p>
+      <button class="checkout-button" onclick="checkout()">ORDER ON WHATSAPP ↗</button>
+    </div>
+  </aside>
+
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
